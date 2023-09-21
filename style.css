@@ -1,3 +1,7 @@
+:root {
+    --color-1: rgb(196, 204, 181);
+}
+
 *,
 body,
 html{
@@ -10,22 +14,23 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(196, 204, 181);
+    background-color: var(--color-1);
     border-bottom: 1px rgb(0, 0, 0, .3) solid;
     font-size: 3.5rem;
     text-decoration: underline;
+    width: 100%;
 }
 
-footer {
-    height: 30px;
-    background-color: blue;
-    width: 100%;
-    bottom: 0;
+.created-by{
+    position: absolute;
+    font-size: clamp(10px, 1rem, 14px);
+    right: 5px;
+    bottom: 1px;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 275px 4fr;
 }
 
 .sidebar {
@@ -47,8 +52,6 @@ footer {
     margin-bottom: 25px;
 }
 
-
-
 .sidebar-title button {
     background-color: transparent;
     border: none;
@@ -62,9 +65,9 @@ input {
     overflow: auto;
 }
 
-.form-cc {
-    position: absolute;
+.form-cc {    
     display: none;
+    position: absolute;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -72,7 +75,6 @@ input {
     width: 100%;
     top: 0;
     left: 0;
-    
 }
 
 form {
@@ -140,40 +142,46 @@ body {
 }
 
 .grid-container {
-    background-color: rgb(196, 204, 181);
+    background-color: rgb(155, 155, 145);
     height: 100vh;
+    width: 100%;
+    overflow: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-auto-rows: max-content;
     justify-items: center;
     row-gap: 20px;
+    column-gap: 10px;
     padding: 35px 20px;
+    
 }
 
-
 .book-grid-container {
+    background-color: var(--color-1);
     border: 1px black solid;
     min-height: 125px;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 350px;
+    max-width: 400px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .book-title {
     font-size: 30px;
     text-align: center;
-}
-
-.book-grid-container h3::after{
-    content: "";
-    display: block;
+    overflow: auto;
+    height: min-content;
+    text-wrap: nowrap;
     border-bottom: 1px solid black;
-    margin-right: 5px;
-    margin-left: 5px;
+    padding: 5px;
 }
 
 .book-content {
     padding: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    grid-auto-rows: 20px;
 }
 
 .book-grid-template {
@@ -182,10 +190,45 @@ body {
 
 .titles-list{
     font-size: 25px;
-    padding-left: 10px;
+    padding-left: 20px;
     overflow: auto;
+    height: 100%;
 }
 
 .list {
-    list-style: none;
+    /* list-style-image: url(./images/rhombus-outline.svg); */
+    list-style:circle;
+}
+
+.list li {
+    text-wrap: nowrap;
+    margin-bottom: 5px;   
+}
+
+#delete-svg,
+#read-svg{
+    height: 20px;
+    cursor: pointer;
+}
+
+#read-svg{
+    display: none;
+}
+
+.author-container {
+    grid-column: 1 / -1;
+}
+
+.read-container{
+    grid-column: 1/2;
+}
+
+.book-buttons-container button {
+    background-color: transparent;
+    border: none;
+}
+
+.book-buttons-container {
+    justify-self: end;
+    gap: 50px;
 }
