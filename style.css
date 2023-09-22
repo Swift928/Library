@@ -10,6 +10,12 @@ html{
     margin: 0;
 }
 
+body, html{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -19,6 +25,8 @@ header {
     font-size: 3.5rem;
     text-decoration: underline;
     width: 100%;
+    text-align: center;
+    /* overflow: auto; */
 }
 
 .created-by{
@@ -29,13 +37,19 @@ header {
 }
 
 .container {
+    position: relative;
     display: grid;
     grid-template-columns: 275px 4fr;
+    /* min-height: 100%; */
+    flex-grow: 1;
 }
 
 .sidebar {
     background-color: rgb(197, 195, 195);
     padding: 15px;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
 }
 
 #new-book {
@@ -126,10 +140,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-body {
-    overflow: hidden;
-}
-
 #overlay {
     display: none; 
     position: fixed;
@@ -143,7 +153,7 @@ body {
 
 .grid-container {
     background-color: rgb(155, 155, 145);
-    height: 100vh;
+    /* height: 100%; */
     width: 100%;
     overflow: auto;
     display: grid;
@@ -192,11 +202,11 @@ body {
     font-size: 25px;
     padding-left: 20px;
     overflow: auto;
-    height: 100%;
+    min-height: inherit;
+    flex-grow: 1;
 }
 
 .list {
-    /* list-style-image: url(./images/rhombus-outline.svg); */
     list-style:circle;
 }
 
@@ -231,4 +241,15 @@ body {
 .book-buttons-container {
     justify-self: end;
     gap: 50px;
+}
+
+@media screen and (max-width: 655px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        height: 225px;
+    }
+    
 }

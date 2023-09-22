@@ -13,7 +13,6 @@
 
     <header>
         <h1>Digital Library</h1>
-        <h5 class="created-by">Created By: Swift928</h5>
     </header>
 
     <div class="container">
@@ -41,22 +40,22 @@
                     <form action="">
                         <div class="form-title">
                             <label for="title">Title</label>
-                            <input id="title" type="text">
+                            <input id="title" type="text" required>
                         </div>
                         <div class="form-author">
                             <label for="author">Author</label>
-                            <input type="text" name="" id="author">
+                            <input type="text" name="" id="author" required>
                         </div>
                         <div class="form-pages">
                             <label for="count-pages">Pages</label>
-                            <input type="number" id="count-pages" inputmode="numeric" pattern="\d">
+                            <input type="number" id="count-pages" inputmode="numeric" pattern="\d" required>
                         </div>
                         <div class="form-read">
                             <label for="read">Finished Reading?</label>
                             <input type="checkbox" id="read">
                         </div>
 
-                        <button type="button" id="form-button">
+                        <button id="form-button">
                             Submit
                         </button>
                     </form>
@@ -84,7 +83,7 @@
             </div>
             
         </div>
-
+        <h5 class="created-by">Created By: Swift928</h5>
     </div>
 </body>
 </html>
