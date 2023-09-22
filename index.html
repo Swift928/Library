@@ -10,6 +10,37 @@
 <body>
 
     <div id="overlay"></div>
+    
+    <div class="form-cc">
+        <div id="form-container">
+            <div class="form-header">
+                <h2>Book Information</h2>
+                <p>Please fill out the following info about the book.</p>
+            </div>
+            <form action="">
+                <div class="form-title">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" required>
+                </div>
+                <div class="form-author">
+                    <label for="author">Author</label>
+                    <input type="text" name="" id="author" required>
+                </div>
+                <div class="form-pages">
+                    <label for="count-pages">Pages</label>
+                    <input type="number" id="count-pages" inputmode="numeric" pattern="\d" required>
+                </div>
+                <div class="form-read">
+                    <label for="read">Finished Reading?</label>
+                    <input type="checkbox" id="read">
+                </div>
+
+                <button id="form-button">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
 
     <header>
         <h1>Digital Library</h1>
@@ -18,7 +49,8 @@
     <div class="container">
 
         <div class="sidebar">
-            <div class="sidebar-title"><h3 class="madeIt">Titles</h3>
+            <div class="sidebar-title">
+                <h3 class="madeIt">Titles</h3>
                 <button type="button" id="new-book-button">
                 <svg id="new-book" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                 </button>
@@ -31,36 +63,7 @@
                 </ul>
             </div>
     
-            <div class="form-cc">
-                <div id="form-container">
-                    <div class="form-header">
-                        <h2>Book Information</h2>
-                        <p>Please fill out the following info about the book.</p>
-                    </div>
-                    <form action="">
-                        <div class="form-title">
-                            <label for="title">Title</label>
-                            <input id="title" type="text" required>
-                        </div>
-                        <div class="form-author">
-                            <label for="author">Author</label>
-                            <input type="text" name="" id="author" required>
-                        </div>
-                        <div class="form-pages">
-                            <label for="count-pages">Pages</label>
-                            <input type="number" id="count-pages" inputmode="numeric" pattern="\d" required>
-                        </div>
-                        <div class="form-read">
-                            <label for="read">Finished Reading?</label>
-                            <input type="checkbox" id="read">
-                        </div>
-
-                        <button id="form-button">
-                            Submit
-                        </button>
-                    </form>
-                </div>
-            </div>
+            
 
         </div>
 

@@ -40,7 +40,6 @@ header {
     position: relative;
     display: grid;
     grid-template-columns: 275px 4fr;
-    /* min-height: 100%; */
     flex-grow: 1;
 }
 
@@ -246,10 +245,15 @@ input[type="number"] {
 @media screen and (max-width: 655px) {
     .container {
         grid-template-columns: 1fr;
+        grid-template-rows: 225px 1fr;
     }
 
-    .sidebar {
-        height: 225px;
+    .titles-list{
+        min-height: auto;
+    }
+
+    #form-container {
+        padding: 15px;
     }
     
 }
