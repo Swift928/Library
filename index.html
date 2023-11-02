@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-author">
                         <label for="author">Author</label>
-                        <input type="text" name="" id="author" required />
+                        <input type="text" id="author" required />
                     </div>
                     <div class="form-pages">
                         <label for="count-pages">Pages</label>
@@ -41,8 +41,9 @@
                             type="number"
                             id="count-pages"
                             inputmode="numeric"
-                            maxlength="4"
-                            pattern="\d"
+                            max="5"
+                            oninput="this.value = this.value.slice(0, 5);"
+                            pattern="\d{1,5}"
                             required
                         />
                     </div>
