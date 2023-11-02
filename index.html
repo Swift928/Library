@@ -8,98 +8,123 @@
 ********************************
  -->
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./style.css" type="text/css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./script.js" defer></script>
+        <link rel="stylesheet" href="./style.css" type="text/css" />
+    </head>
+    <body>
+        <div id="overlay"></div>
 
-    <div id="overlay"></div>
+        <div class="form-cc">
+            <div id="form-container">
+                <div class="form-header">
+                    <h2>Book Information</h2>
+                    <p>Please fill out the following info about the book.</p>
+                </div>
+                <form action="">
+                    <div class="form-title">
+                        <label for="title">Title</label>
+                        <input id="title" type="text" required />
+                    </div>
+                    <div class="form-author">
+                        <label for="author">Author</label>
+                        <input type="text" name="" id="author" required />
+                    </div>
+                    <div class="form-pages">
+                        <label for="count-pages">Pages</label>
+                        <input
+                            type="number"
+                            id="count-pages"
+                            inputmode="numeric"
+                            maxlength="4"
+                            pattern="\d"
+                            required
+                        />
+                    </div>
+                    <div class="form-read">
+                        <label for="read">Finished Reading?</label>
+                        <input type="checkbox" id="read" />
+                    </div>
 
-    <div class="form-cc">
-        <div id="form-container">
-            <div class="form-header">
-                <h2>Book Information</h2>
-                <p>Please fill out the following info about the book.</p>
+                    <button id="form-button">Submit</button>
+                </form>
             </div>
-            <form action="">
-                <div class="form-title">
-                    <label for="title">Title</label>
-                    <input id="title" type="text" required>
-                </div>
-                <div class="form-author">
-                    <label for="author">Author</label>
-                    <input type="text" name="" id="author" required>
-                </div>
-                <div class="form-pages">
-                    <label for="count-pages">Pages</label>
-                    <input type="number" id="count-pages" inputmode="numeric" pattern="\d" required>
-                </div>
-                <div class="form-read">
-                    <label for="read">Finished Reading?</label>
-                    <input type="checkbox" id="read">
-                </div>
-
-                <button id="form-button">
-                    Submit
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <header>
-        <h1>Digital Library</h1>
-    </header>
-
-    <div class="container">
-
-        <div class="sidebar">
-            <div class="sidebar-title">
-                <h3 class="madeIt">Titles</h3>
-                <button type="button" id="new-book-button">
-                <svg id="new-book" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
-                </button>
-            </div>
-            
-
-            <div class="titles-list">
-                <ul class="list">
-                
-                </ul>
-            </div>
-    
-            
-
         </div>
 
-        <div class="grid-container">
-            <div class="book-grid-template book-grid-container">
-                <h3 class="book-title"></h3>
-                <div class="book-content">
-                    <p class="author-container"><strong>Author:</strong> <span class="author"></span></p>
-                    <p><strong>Pages:</strong> <span class="page-count"></span></p>
-                    <p class="read-container"><strong>Read:</strong> <span class="read"></span></p>
-                    <div class="book-buttons-container">
-                        <button type="button">
-                            <svg id="read-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.59,11.59L23,13L13.5,22.5L8.42,17.41L9.83,16L13.5,19.68L21.59,11.59M4,16V3H6L9,3A4,4 0 0,1 13,7C13,8.54 12.13,9.88 10.85,10.55L14,16H12L9.11,11H6V16H4M6,9H9A2,2 0 0,0 11,7A2,2 0 0,0 9,5H6V9Z" /></svg>
-                        </button>
-                        <button type="button" id="made-delete">
-                            <svg id="delete-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
-                        </button>
+        <header>
+            <h1>Digital Library</h1>
+        </header>
+
+        <div class="container">
+            <div class="sidebar">
+                <div class="sidebar-title">
+                    <h3 class="madeIt">Titles</h3>
+                    <button type="button" id="new-book-button">
+                        <svg
+                            id="new-book"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="titles-list">
+                    <ul class="list"></ul>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="book-grid-template book-grid-container">
+                    <h3 class="book-title"></h3>
+                    <div class="book-content">
+                        <p class="author-container">
+                            <strong>Author:</strong>
+                            <span class="author"></span>
+                        </p>
+                        <p>
+                            <strong>Pages:</strong>
+                            <span class="page-count"></span>
+                        </p>
+                        <p class="read-container">
+                            <strong>Read:</strong> <span class="read"></span>
+                        </p>
+                        <div class="book-buttons-container">
+                            <button type="button">
+                                <svg
+                                    id="read-svg"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M21.59,11.59L23,13L13.5,22.5L8.42,17.41L9.83,16L13.5,19.68L21.59,11.59M4,16V3H6L9,3A4,4 0 0,1 13,7C13,8.54 12.13,9.88 10.85,10.55L14,16H12L9.11,11H6V16H4M6,9H9A2,2 0 0,0 11,7A2,2 0 0,0 9,5H6V9Z"
+                                    />
+                                </svg>
+                            </button>
+                            <button type="button" id="made-delete">
+                                <svg
+                                    id="delete-svg"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+            <h5 class="created-by">Created By: Swift928</h5>
         </div>
-        <h5 class="created-by">Created By: Swift928</h5>
-    </div>
-</body>
+    </body>
 </html>
